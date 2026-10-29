@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVENOR — The Modern Atelier</title>
+<meta name="description" content="AVENOR is a premium editorial shopping experience — fashion, footwear, beauty and accessories, curated with intention.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital:opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="avenor-transition" id="avenorTransition" aria-hidden="true">
+    <div class="at-inner">
+      <span class="at-word">AVENOR</span>
+      <span class="at-line" aria-hidden="true"></span>
+      <span class="at-sub">The Modern Atelier — New Arrivals</span>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand-lockup" href="#hero" data-transition aria-label="AVENOR — home">
+        <img src="assets/logo.png" alt="AVENOR logo" class="brand-mark" width="34" height="34">
+        <span class="brand-word">AVENOR</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="#hero" data-transition>Home</a>
+        <a href="#avenor-edit" data-transition>Showcase</a>
+        <a href="#new-arrivals" data-transition>New In</a>
+        <a href="#shop-categories" data-transition>Categories</a>
+        <a href="#footer" data-transition>Info</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search products">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20L15.5 15.5"/></svg>
+        </button>
+        <button class="icon-btn wishlist-btn" id="wishlistBtn" aria-label="Wishlist, 0 items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21C12 21 4 13.5 4 8.5a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 5-8 12.5-8 12.5Z"/></svg>
+          <span class="wishlist-count" aria-hidden="true">0</span>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart, 0 items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-13z"/><path d="M6 6L5 2H2"/><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/></svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation — editorial drawer (same language as cart/wishlist) -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-nav-sheet" role="document">
+      <div class="mobile-nav-head">
+        <a class="mobile-nav-brand" href="#hero" data-transition aria-label="AVENOR — home">
+          <span>AVENOR</span>
+          <small>The Modern Atelier</small>
+        </a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Primary">
+        <a href="#hero" data-transition><span>Home</span><small>Top · Atelier opening</small></a>
+        <a href="#avenor-edit" data-transition><span>Showcase</span><small>Edition No. 02 · The AVENOR Showcase</small></a>
+        <a href="#new-arrivals" data-transition><span>New In</span><small>20 just-dropped · Editorial grid</small></a>
+        <a href="#shop-categories" data-transition><span>Categories</span><small>3 banners · Dedicated pages</small></a>
+        <a href="#footer" data-transition><span>Info</span><small>Atelier · Contact</small></a>
+      </nav>
+      <div class="mobile-nav-collections" aria-label="Collections">
+        <p class="mobile-nav-label">Collections</p>
+        <a href="#collection-fashion" data-transition>Fashion — 24 pieces · Tailoring &amp; Atelier</a>
+        <a href="#collection-sneakers" data-transition>Sneakers &amp; Footwear — 18 pairs · Air &amp; Lug</a>
+        <a href="#collection-beauty" data-transition>Beauty &amp; Care — 57 pieces · Colour &amp; Ritual</a>
+      </div>
+      <div class="mobile-nav-actions">
+        <button class="mobile-nav-action" id="mobileSearchBtn" aria-label="Open search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20L15.5 15.5"/></svg> Search — 99 products</button>
+        <button class="mobile-nav-action" id="mobileWishlistBtn" aria-label="Open wishlist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21C12 21 4 13.5 4 8.5a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 5-8 12.5-8 12.5Z"/></svg> Wishlist</button>
+        <button class="mobile-nav-action" id="mobileCartBtn" aria-label="Open cart"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-13z"/><path d="M6 6L5 2H2"/><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/></svg> Cart</button>
+      </div>
+      <p class="mobile-nav-note">Same catalog · Same product detail · No duplicates — 99 image-locked products.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="hero" aria-label="AVENOR hero — editorial introduction and featured products">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="portrait-wrap" aria-hidden="true">
+            <img src="assets/portrait.png" alt="" class="portrait-img" width="418" height="597" fetchpriority="high">
+          </div>
+          <div class="hero-left-overlay"></div>
+          <div class="hero-left-content">
+            <p class="eyebrow">EST. 2026 — The Modern Atelier</p>
+            <h1 class="wordmark">AVENOR</h1>
+            <p class="hero-intro">A curated universe of fashion, footwear,<br> beauty and accessories — edited for those<br> who dress with intention.</p>
+            <div class="hero-cta-row">
+              <a href="#new-arrivals" class="cta-primary" data-transition>
+                Shop Collection
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+              </a>
+              <span class="cta-note">New season now live — 7 curated highlights</span>
+            </div>
+            <div class="hero-meta">
+              <span>Look — Editorial No. 01</span>
+              <span class="dot">·</span>
+              <span>Paris • Lagos • Milan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="showcase-header">
+            <span class="showcase-kicker">Featured — One at a time</span>
+            <span class="showcase-count" id="showcaseCount" aria-live="polite">01 / 07</span>
+          </div>
+          <div class="showcase-stage" id="showcaseStage" aria-live="polite" aria-atomic="true"></div>
+          <div class="showcase-controls showcase-controls--manual">
+            <button class="ctrl-btn" id="prevBtn" aria-label="Previous product">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="ctrl-btn" id="nextBtn" aria-label="Next product">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+          <p class="demo-note">All products and prices are illustrative demonstration content.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="new-arrivals" id="new-arrivals" aria-label="New Arrivals — 20 just-dropped products">
+      <div class="na-head">
+        <div>
+          <p class="na-eyebrow">Just Dropped — 20 New Arrivals</p>
+          <h2 class="na-title">New Arrivals</h2>
+          <p class="na-intro">Twenty fresh drops, each locked to the image you see — names, prices and notes written from what’s actually in frame. Demonstration pricing in USD.</p>
+        </div>
+        <div class="na-head-meta">
+          <span>20 pieces · Editorial grid</span>
+          <span class="dot">·</span>
+          <span>USD · Demo</span>
+        </div>
+      </div>
+      <div class="na-grid" id="naGrid" aria-live="polite"></div>
+      <p class="na-footnote">All products shown are illustrative demonstration content. Props, linens, books and packaging visible as styling are not included unless listed in the product description. No real transactions are processed.</p>
+    </section>
+
+
+    <section class="shop-categories" id="shop-categories" aria-label="Shop by Category — 3 editorial banners">
+      <div class="sc-head">
+        <div>
+          <p class="sc-eyebrow">Edit by Discipline</p>
+          <h2 class="sc-title">Shop by Category</h2>
+          <p class="sc-intro">Three considered paths through the atelier — each banner now navigates to its dedicated collection page.</p>
+        </div>
+        <div class="sc-head-meta">
+          <span>3 banners · Dedicated pages</span>
+          <span class="dot">·</span>
+          <span>Same catalog · Same product views</span>
+        </div>
+      </div>
+
+      <div class="sc-grid">
+        <a class="sc-banner sc--fashion" href="#collection-fashion" data-collection="fashion" aria-label="Shop Fashion — open the Fashion collection page">
+          <img src="assets/banners/fashion.jpg" alt="Fashion — model in brown wool coat, beige vest and trousers with white pointed pumps" loading="lazy" width="900" height="700">
+          <span class="sc-overlay" aria-hidden="true"></span>
+          <span class="sc-tag">Collection 01</span>
+          <div class="sc-content">
+            <p class="sc-kicker">Fashion</p>
+            <h3 class="sc-name">Tailoring &amp; Atelier</h3>
+            <p class="sc-copy">The full 24-piece Fashion collection — co-ords, tailoring and essentials with locked editorial copy.</p>
+            <span class="sc-cta">Explore Fashion <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a class="sc-banner sc--sneakers" href="#collection-sneakers" data-collection="sneakers" aria-label="Shop Sneakers and Footwear — open the Sneakers and Footwear collection page">
+          <img src="assets/banners/sneakers.jpg" alt="Sneakers & Footwear — white chunky sneaker floating above dark stone on deep red" loading="lazy" width="900" height="700">
+          <span class="sc-overlay" aria-hidden="true"></span>
+          <span class="sc-tag">Collection 02</span>
+          <div class="sc-content">
+            <p class="sc-kicker">Sneakers &amp; Footwear</p>
+            <h3 class="sc-name">Air &amp; Lug</h3>
+            <p class="sc-copy">The full footwear drop — 18 pairs from AF-1 and Air Max to platform loafers and Chelsea boots, each locked to its image.</p>
+            <span class="sc-cta">Explore Footwear <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a class="sc-banner sc--beauty" href="#collection-beauty" data-collection="beauty" aria-label="Shop Beauty and Care — open the Beauty and Care collection page">
+          <img src="assets/banners/beauty.jpg" alt="Beauty & Care — vanity with lipsticks, perfume bottles and rose-gold brushes under soft light" loading="lazy" width="900" height="700">
+          <span class="sc-overlay" aria-hidden="true"></span>
+          <span class="sc-tag">Collection 03</span>
+          <div class="sc-content">
+            <p class="sc-kicker">Beauty &amp; Care</p>
+            <h3 class="sc-name">Colour &amp; Ritual</h3>
+            <p class="sc-copy">The full 57-piece Beauty &amp; Care drop — lipsticks, serums, fragrances, lotions, handbags and jewellery from your images, each locked to its photo.</p>
+            <span class="sc-cta">Explore Beauty <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sc-filterbar" role="toolbar" aria-label="Filter New Arrivals">
+        <div class="sc-filterbar-left">
+          <span class="sc-filter-label" id="scFilterLabel">Viewing: All arrivals</span>
+          <span class="sc-filter-count" id="scFilterCount">20 pieces</span>
+          <button class="sc-clear" id="scClear" hidden>Clear filter</button>
+        </div>
+        <div class="sc-chips">
+          <button class="sc-chip is-active" data-sc-chip="all" data-filter="all">All</button>
+          <button class="sc-chip" data-sc-chip="fashion" data-filter="fashion">Fashion</button>
+          <button class="sc-chip" data-sc-chip="sneakers" data-filter="sneakers">Sneakers</button>
+          <button class="sc-chip" data-sc-chip="beauty" data-filter="beauty">Beauty</button>
+        </div>
+        <span id="scLive" class="visually-hidden" aria-live="polite"></span>
+      </div>
+      <p class="sc-note">Each banner is a locked pair to its image. Banners now navigate to dedicated collection pages; the chip bar continues to filter New Arrivals in place. One catalog, one product detail — no duplicates.</p>
+    </section>
+
+    <!-- THE AVENOR SHOWCASE — editorial curation (not a product grid) -->
+    <section class="avenor-edit" id="avenor-edit" aria-label="The AVENOR Showcase — editorial curation">
+      <div class="edit-head">
+        <div>
+          <p class="edit-eyebrow">Edition No. 02 — Atelier Journal</p>
+          <h2 class="edit-title">The AVENOR Showcase</h2>
+          <p class="edit-intro">Six pieces, chosen slowly — a coat that holds its line, a loafer that earns its patina, a scent that lingers after the room empties. Not a new drop, but a point of view.</p>
+        </div>
+        <div class="edit-head-meta">
+          <span>6 pieces · Curated from the atelier</span>
+          <span class="dot">·</span>
+          <span>One catalog · One detail view</span>
+        </div>
+      </div>
+
+      <div class="edit-stories">
+        <!-- Chapter 01 — Tailoring -->
+        <article class="edit-story">
+          <div class="edit-story-media">
+            <img src="assets/banners/fashion.jpg" alt="Tailoring — wool and light on the atelier rail" loading="lazy" width="900" height="700">
+            <span class="edit-media-tag">Chapter 01 — Tailoring</span>
+            <span class="edit-media-num">01</span>
+          </div>
+          <div class="edit-story-body">
+            <p class="edit-kicker">Wool, wrapped — the hour before evening</p>
+            <h3 class="edit-story-title">A softer kind of structure</h3>
+            <p class="edit-copy">We keep returning to camel — not for its sweetness, but for its steadiness. A wrap blazer worn open over a single-breasted base, or a burgundy coat that does the work of an entire outfit. Both cut to move, not to pose.</p>
+            <div class="edit-products na-grid" id="editFashion" aria-live="polite"></div>
+            <p class="edit-story-note">Both open the same product detail as in Fashion and New Arrivals — one catalog, no duplicates. Hearts and Add to Cart stay in sync.</p>
+          </div>
+        </article>
+
+        <!-- Chapter 02 — Air & Lug -->
+        <article class="edit-story edit-story--reverse">
+          <div class="edit-story-body">
+            <p class="edit-kicker">Air &amp; lug — polish, grounded</p>
+            <h3 class="edit-story-title">The weight a shoe should carry</h3>
+            <p class="edit-copy">A loafer at its most formal — jacquard monogram, gold horsebit, lug sole deep enough to weather pavement — set against a runner caught in motion, light bone and airborne dust. Two ways to leave the ground without leaving the room.</p>
+            <div class="edit-products na-grid" id="editSneakers" aria-live="polite"></div>
+            <p class="edit-story-note">From Sneakers &amp; Footwear — same image-locked pairs, same detail views.</p>
+          </div>
+          <div class="edit-story-media">
+            <img src="assets/banners/sneakers.jpg" alt="Footwear — white sculpted sneaker on deep red" loading="lazy" width="900" height="700">
+            <span class="edit-media-tag">Chapter 02 — Footwear</span>
+            <span class="edit-media-num">02</span>
+          </div>
+        </article>
+
+        <!-- Chapter 03 — Ritual -->
+        <article class="edit-story">
+          <div class="edit-story-media">
+            <img src="assets/banners/beauty.jpg" alt="Ritual — brushes and scent on the vanity" loading="lazy" width="900" height="700">
+            <span class="edit-media-tag">Chapter 03 — Ritual</span>
+            <span class="edit-media-num">03</span>
+          </div>
+          <div class="edit-story-body">
+            <p class="edit-kicker">Ritual — the table before you go out</p>
+            <h3 class="edit-story-title">Colour that stays, hand that holds</h3>
+            <p class="edit-copy">A structured two-tone Dior handbag kept at the edge of the table, and a low, daily serum that brightens before anything else touches skin. One is carried, the other absorbed — both mark the start of the evening, not its end.</p>
+            <div class="edit-products na-grid" id="editBeauty" aria-live="polite"></div>
+            <p class="edit-story-note">From Beauty &amp; Care — 57 pieces share this catalog, this detail view, this wishlist drawer.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="edit-closing">
+        <p class="edit-closing-rule" aria-hidden="true"></p>
+        <p class="edit-closing-copy">Edited from <strong>99</strong> pieces across Fashion, Sneakers and Beauty — no new catalog was made for this page. Every card above is the same product you’ll find in its collection, the same photograph, the same drawer, the same cart. <a href="#new-arrivals" data-transition>Return to New Arrivals</a> or <a href="#collection-fashion" data-transition>enter the atelier</a>.</p>
+      </div>
+    </section>
+
+    <!-- COLLECTION: FASHION -->
+    <section class="collection-section" id="collection-fashion" aria-label="Fashion collection — 24 pieces from the atelier">
+      <div class="col-head">
+        <div>
+          <p class="col-eyebrow">Collection 01 — Fashion</p>
+          <h2 class="col-title">Fashion</h2>
+          <p class="col-intro">Your Fashion collection — co-ords, tailoring, dresses, knitwear and essentials. 19 pieces from assets/collections/fashion/01-19 plus the 5 Fashion New Arrivals remaining in this collection.</p>
+        </div>
+        <div class="col-head-meta">
+          <span class="col-count">24 pieces · Editorial grid</span>
+          <span class="dot">·</span>
+          <span>USD · Demo</span>
+        </div>
+      </div>
+      <div class="na-grid col-grid" id="fashionGrid" aria-live="polite"></div>
+      <p class="col-footnote">Descriptions state exactly what is included; footwear, belts, watches, eyewear and displays visible as styling are excluded unless listed. Demonstration pricing in USD — no real checkout.</p>
+    </section>
+
+    <!-- COLLECTION: SNEAKERS -->
+    <section class="collection-section" id="collection-sneakers" aria-label="Sneakers and Footwear collection">
+      <div class="col-head">
+        <div>
+          <p class="col-eyebrow">Collection 02 — Sneakers &amp; Footwear</p>
+          <h2 class="col-title">Sneakers &amp; Footwear</h2>
+          <p class="col-intro">The full Footwear drop — AF-1, Air Max, runners, platform loafers and Chelsea boots. 12 new pieces plus the 6 New Arrivals, all sharing one catalog and one product detail.</p>
+        </div>
+        <div class="col-head-meta">
+          <span class="col-count">18 pieces · Editorial grid</span>
+          <span class="dot">·</span>
+          <span>USD · Demo</span>
+        </div>
+      </div>
+      <div class="na-grid col-grid" id="sneakersGrid" aria-live="polite"></div>
+      <p class="col-footnote">Each card opens the same product detail as in New Arrivals. No duplicates — one catalog, one PDP, one cart.</p>
+    </section>
+
+    <!-- COLLECTION: BEAUTY -->
+    <section class="collection-section" id="collection-beauty" aria-label="Beauty and Care collection">
+      <div class="col-head">
+        <div>
+          <p class="col-eyebrow">Collection 03 — Beauty &amp; Care</p>
+          <h2 class="col-title">Beauty &amp; Care</h2>
+          <p class="col-intro">The full Beauty &amp; Care drop — 48 pieces plus the 9 Beauty New Arrivals now in this collection (57 total) sharing one catalog and one product detail. Lipsticks, serums, fragrances and body care alongside the handbags and jewellery present in the Beauty &amp; Care folder you supplied.</p>
+        </div>
+        <div class="col-head-meta">
+          <span class="col-count">57 pieces · Editorial grid</span>
+          <span class="dot">·</span>
+          <span>USD · Demo</span>
+        </div>
+      </div>
+      <div class="na-grid col-grid" id="beautyGrid" aria-live="polite"></div>
+      <p class="col-footnote">Props and palettes shown as staging are excluded unless listed. Tap any card for variants, quantity and Add to Cart.</p>
+    </section>
+
+    <footer class="site-footer" id="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-word">AVENOR</span>
+          <p>Premium editorial shopping — demonstration store. Policies and pricing are for presentation purposes. A single 99-product catalog powers New Arrivals, the three collections, Showcase and checkout.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h4>Atelier</h4>
+            <a href="#hero" data-transition>Home</a>
+            <a href="#avenor-edit" data-transition>Showcase</a>
+            <a href="#new-arrivals" data-transition>New In</a>
+            <a href="#shop-categories" data-transition>Categories</a>
+          </div>
+          <div>
+            <h4>Collections</h4>
+            <a href="#collection-fashion" data-transition>Fashion — Tailoring &amp; Atelier</a>
+            <a href="#collection-sneakers" data-transition>Sneakers &amp; Footwear — Air &amp; Lug</a>
+            <a href="#collection-beauty" data-transition>Beauty &amp; Care — Colour &amp; Ritual</a>
+          </div>
+          <div>
+            <h4>Assistance</h4>
+            <a href="#new-arrivals" data-transition>Browse New Arrivals</a>
+            <a href="#" data-footer-soon>Delivery (Demo)</a>
+            <a href="#" data-footer-soon>Returns (Demo)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal contact — John Olatunji -->
+      <div class="footer-contact" aria-label="Contact the atelier owner">
+        <div class="footer-contact-inner">
+          <div class="footer-contact-label">
+            <span>Atelier contact — John Olatunji</span>
+            <small>Direct, personal links only — no invented business accounts</small>
+          </div>
+          <div class="footer-contact-links">
+            <a href="https://wa.me/2348166966893" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp — +234 816 696 6893">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21c-4 0-7-2.8-7-6.4 0-1.9.9-3.6 2.4-4.8"/><path d="M19 14.5A6.5 6.5 0 0 0 12 7"/><path d="M12 21a6.4 6.4 0 0 0 5.2-2.7l2.8.7-.8-2.7A6.4 6.4 0 0 0 12 7"/><path d="M9.2 10.2c.2.6.7 1.7 1.7 2.7 1 1 2.1 1.5 2.7 1.7l.5-1.1c-.4-.2-1.1-.5-1.6-1-.5-.5-.8-1.2-1-1.6l-1.1.5"/><path d="M8 9.5c0-.4.3-.7.7-.7.2 0 .5.1.6.4"/></svg>
+              <span>WhatsApp</span>
+              <small>+234 816 696 6893</small>
+            </a>
+            <a href="mailto:johnolatunji772@gmail.com" aria-label="Email John — johnolatunji772@gmail.com">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <span>Email</span>
+              <small>johnolatunji772@gmail.com</small>
+            </a>
+            <a href="https://x.com/Cool_joohn" target="_blank" rel="noopener noreferrer" aria-label="Open X profile @Cool_joohn in a new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4l16 16"/><path d="M20 4L4 20"/></svg>
+              <span>X</span>
+              <small>@Cool_joohn</small>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 AVENOR — Demonstration experience. No real transactions processed. No payment collected.</span>
+        <span class="footer-palette"><i style="background:#6F4E37"></i><i style="background:#E5E4E2"></i><i style="background:#E6E0F0"></i> Mocha · Platinum · Lavender</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products">
+    <div class="search-sheet" role="document">
+      <div class="search-head">
+        <div class="search-input-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20L15.5 15.5"/></svg>
+          <input id="searchInput" type="search" placeholder="Search — try &quot;lipstick&quot;, &quot;Air Force&quot;, &quot;satchel&quot; or &quot;platinum&quot;" autocomplete="off" spellcheck="false" aria-label="Search products">
+          <button class="search-clear" id="searchClear" aria-label="Clear search" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+        </div>
+        <button class="search-close" id="searchClose" aria-label="Close search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div class="search-meta" id="searchMeta" aria-live="polite">Search 99 products across Fashion, Sneakers &amp; Beauty</div>
+      <div class="search-results-wrap">
+        <div class="search-results na-grid" id="searchResults" aria-live="polite"></div>
+      </div>
+      <p class="search-footnote">Press Esc to close. Tap any result to open its product detail. Empty searches show a prompt — no results shows suggestions.</p>
+    </div>
+  </div>
+
+  <!-- Wishlist Drawer -->
+  <div class="wishlist-drawer" id="wishlistDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Wishlist">
+    <div class="wishlist-sheet" role="document">
+      <div class="wishlist-head">
+        <div>
+          <h3>Wishlist</h3>
+          <p class="wishlist-sub" id="wishlistCountHead">0 saved — hearts everywhere stay in sync</p>
+        </div>
+        <button class="wishlist-close" id="wishlistClose" aria-label="Close wishlist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div class="wishlist-items" id="wishlistItems"></div>
+      <div class="wishlist-foot">
+        <button class="wishlist-browse" id="wishlistBrowse" data-close-wishlist>Browse New Arrivals</button>
+        <button class="wishlist-clear" id="wishlistClear">Clear wishlist</button>
+        <p class="wishlist-note">Saved locally on this device (localStorage). Same product ID wherever it appears — New Arrivals, collections and product details stay consistent. No account needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDP Overlay -->
+  <div class="pdp-overlay" id="pdpOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="pdp-sheet" role="document">
+      <button class="pdp-close" id="pdpClose" aria-label="Close product details"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      <div class="pdp-grid">
+        <div class="pdp-media">
+          <img id="pdpImg" src="" alt="" width="700" height="700">
+        </div>
+        <div class="pdp-body">
+          <p class="pdp-cat" id="pdpCat"></p>
+          <h3 class="pdp-name" id="pdpName"></h3>
+          <p class="pdp-desc" id="pdpDesc"></p>
+          <p class="pdp-price" id="pdpPrice"></p>
+          <div class="pdp-sizes" id="pdpSizes" hidden></div>
+          <div class="pdp-qty">
+            <span>Quantity</span>
+            <div class="pdp-qty-ctrl">
+              <button id="pdpMinus" aria-label="Decrease quantity">−</button>
+              <span id="pdpQty">1</span>
+              <button id="pdpPlus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+          <div class="pdp-actions">
+            <button class="pdp-add" id="pdpAdd">Add to cart</button>
+            <button class="pdp-wishlist" id="pdpWishlist" aria-label="Save to wishlist" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21C12 21 4 13.5 4 8.5a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 5-8 12.5-8 12.5Z"/></svg> <span>Save</span></button>
+          </div>
+          <p class="pdp-note">Illustrative demonstration product. No real payment is processed; cart persists locally for this demo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="cart-sheet" role="document">
+      <div class="cart-head">
+        <h3>Cart</h3>
+        <button class="cart-close" id="cartClose" aria-label="Close cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-foot">
+        <div class="cart-subtotal"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+        <button class="cart-checkout" id="cartCheckout">Checkout — Demo only</button>
+        <p class="cart-demo-note">Demo only — this does not charge, fulfil or place a real order.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout — premium editorial overlay (demo only, no payment) -->
+  <div class="checkout-overlay" id="checkoutOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Checkout — demo order">
+    <div class="checkout-sheet" role="document">
+      <div class="checkout-head">
+        <div class="checkout-head-left">
+          <p class="checkout-eyebrow">Checkout — Demonstration only</p>
+          <h2 class="checkout-title">The Atelier Checkout</h2>
+          <p class="checkout-subtitle">Review your selection, add delivery details — no payment is collected. This is a portfolio demo using the same 99-product catalog.</p>
+        </div>
+        <button class="checkout-close" id="checkoutClose" aria-label="Close checkout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+
+      <div class="checkout-body" id="checkoutBody">
+        <div class="checkout-grid">
+          <!-- Order Summary -->
+          <section class="co-summary" aria-label="Order summary">
+            <div class="co-summary-head">
+              <h3>Order Summary</h3>
+              <span class="co-count" id="checkoutCount">0 pieces</span>
+            </div>
+            <div class="co-items" id="checkoutItems" aria-live="polite"></div>
+            <div class="co-totals" role="table" aria-label="Totals">
+              <div class="co-total-row"><span>Subtotal</span><strong id="checkoutSubtotal">$0.00</strong></div>
+              <div class="co-total-row co-delivery"><span>Delivery</span><strong id="checkoutDelivery">Complimentary — demo</strong></div>
+              <div class="co-total-row is-total"><span>Total</span><strong id="checkoutTotal">$0.00</strong></div>
+            </div>
+            <p class="co-summary-note">Images, names, sizes and line totals are calculated directly from your cart. Delivery is complimentary in this demo — no shipping rules are invented.</p>
+            <div class="co-summary-actions">
+              <button class="co-back" id="checkoutBack">← Back to cart</button>
+              <a href="#new-arrivals" class="co-continue" data-checkout-browse>Continue shopping</a>
+            </div>
+          </section>
+
+          <!-- Customer Information -->
+          <section class="co-form-panel" aria-label="Delivery details">
+            <h3>Delivery Details</h3>
+            <p class="co-form-intro">Demo fields only — nothing is sent to a server and no payment credentials are requested.</p>
+            <form id="checkoutForm" novalidate>
+              <div class="co-field">
+                <label for="coFullName">Full name <span aria-hidden="true">*</span></label>
+                <input id="coFullName" name="fullName" type="text" autocomplete="name" placeholder="Amina Okafor" required>
+                <span class="co-error" hidden></span>
+              </div>
+              <div class="co-field">
+                <label for="coEmail">Email <span aria-hidden="true">*</span></label>
+                <input id="coEmail" name="email" type="email" autocomplete="email" placeholder="amina@atelier.com" required>
+                <span class="co-error" hidden></span>
+              </div>
+              <div class="co-field">
+                <label for="coPhone">Phone <span aria-hidden="true">*</span></label>
+                <input id="coPhone" name="phone" type="tel" autocomplete="tel" placeholder="+234 801 234 5678" required>
+                <span class="co-error" hidden></span>
+              </div>
+              <div class="co-field">
+                <label for="coAddress">Delivery address <span aria-hidden="true">*</span></label>
+                <input id="coAddress" name="address" type="text" autocomplete="street-address" placeholder="14 Atelier Lane, Victoria Island" required>
+                <span class="co-error" hidden></span>
+              </div>
+              <div class="co-row">
+                <div class="co-field">
+                  <label for="coCity">City <span aria-hidden="true">*</span></label>
+                  <input id="coCity" name="city" type="text" autocomplete="address-level2" placeholder="Lagos" required>
+                  <span class="co-error" hidden></span>
+                </div>
+                <div class="co-field">
+                  <label for="coPostcode">Postcode <span aria-hidden="true">*</span></label>
+                  <input id="coPostcode" name="postcode" type="text" autocomplete="postal-code" placeholder="101001" required>
+                  <span class="co-error" hidden></span>
+                </div>
+              </div>
+              <div class="co-field">
+                <label for="coCountry">Country <span aria-hidden="true">*</span></label>
+                <input id="coCountry" name="country" type="text" autocomplete="country-name" placeholder="Nigeria" required>
+                <span class="co-error" hidden></span>
+              </div>
+
+              <p class="co-demo-notice">No payment step follows. Placing the order generates a demo reference and clears your local cart only after confirmation. No charge is made.</p>
+              <button type="submit" class="co-submit" id="checkoutSubmit">Place Demo Order — No Charge</button>
+              <p class="co-secure"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/></svg> Secure demo checkout — no card details requested</p>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <!-- Confirmation (shown after successful submit) -->
+      <div class="checkout-confirm" id="checkoutConfirm" hidden aria-live="polite"></div>
+    </div>
+  </div>
+
+<script src="js/catalog.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+<script src="js/new-arrivals.js"></script>
+<script src="js/shop-by-category.js"></script>
+<script src="js/collections.js"></script>
+<script src="js/avenor-edit.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/mobile-nav.js"></script>
+</body>
+</html>

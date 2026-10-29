@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env — never commit secrets
+.env
+.env.*
+
+# Dependencies / build output (not needed for this static site)
+node_modules/
+dist/
+build/
+
+# Hosting
+.vercel/
+.netlify/
+
+# Editors
+.vscode/
+.idea/
